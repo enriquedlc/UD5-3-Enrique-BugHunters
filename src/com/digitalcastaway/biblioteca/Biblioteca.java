@@ -6,11 +6,11 @@ import java.util.Iterator;
 
 public class Biblioteca {
     private String name;
-    private ArrayList<Integer> catalogoLibros;
+    private ArrayList<String> catalogoLibros;
 
     public Biblioteca(String name) {
         this.name = name;
-        this.catalogoLibros = new ArrayList<String>(Arrays.stream(Catalogo.libros).toList());
+        this.catalogoLibros = new ArrayList<>(Arrays.stream(Catalogo.libros).toList());
     }
 
     public void showCatalog() {
@@ -21,8 +21,8 @@ public class Biblioteca {
 
         int contador = 0;
 
-        while(it.next()) {
-            System.out.println(contador + " --> " + it.hasNext());
+        while(it.hasNext()) {
+            System.out.println(contador + " --> " + it.next());
             contador--;
         }
     }
